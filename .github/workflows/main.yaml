@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Test
+        run:  ls -l
       - name: Generate Swagger UI
         uses: Legion2/swagger-ui-action@v1
         with:
