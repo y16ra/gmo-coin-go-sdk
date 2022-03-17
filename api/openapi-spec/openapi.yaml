@@ -118,6 +118,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Assets'
+  /private/v1/account/tradingVolume:
+    get:
+      summary: Get trading volume
+      tags: [ 'private' ]
+      security:
+        - ApiKey: []
+          ApiTimestamp: []
+          ApiSign: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TradingVolume'
   /private/v1/order:
     post:
       summary: Order
@@ -351,6 +366,32 @@ components:
         responsetime:
           type: string
           format: date-time
+    TradingVolume:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/StatusCode'
+        data:
+          properties:
+            jpyVolume:
+              type: string
+            tierLevel:
+              type: string
+            limit:
+              type: array
+              items:
+                type: object
+                properties:
+                  symbol:
+                    type: string
+                    $ref: '#/components/schemas/Symbols'
+                  todayLimitOpenSize:
+                    type: string
+        responsetime:
+          type: string
+          format: date-time
+
+
   securitySchemes:
     ApiKey:
       type: apiKey
