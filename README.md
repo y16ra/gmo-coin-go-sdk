@@ -8,3 +8,7 @@
 See the link below
 
 https://y16ra.github.io/gmo-coin-go-sdk/
+
+Cautions:
+
+- `Try it out` button is not working, because of CORS issue.
