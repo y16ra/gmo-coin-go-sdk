@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | **int32** | 0 Nomal end | 
-**Data** | **NullableInterface{}** |  | 
+**Data** | **interface{}** |  | 
 **Responsetime** | **time.Time** |  | 
 
 ## Methods
 
 ### NewTradingVolume
 
-`func NewTradingVolume(status int32, data NullableInterface{}, responsetime time.Time, ) *TradingVolume`
+`func NewTradingVolume(status int32, data interface{}, responsetime time.Time, ) *TradingVolume`
 
 NewTradingVolume instantiates a new TradingVolume object
 This constructor will assign default values to properties that have it defined,

@@ -19,6 +19,10 @@ import (
 	"net/url"
 )
 
+// Linger please
+var (
+	_ context.Context
+)
 
 // PublicApiService PublicApi service
 type PublicApiService service
@@ -134,6 +138,7 @@ type ApiPublicV1StatusGetRequest struct {
 	ctx context.Context
 	ApiService *PublicApiService
 }
+
 
 func (r ApiPublicV1StatusGetRequest) Execute() (*Status, *http.Response, error) {
 	return r.ApiService.PublicV1StatusGetExecute(r)
@@ -345,13 +350,11 @@ func (r ApiPublicV1TradesGetRequest) Symbol(symbol Symbols) ApiPublicV1TradesGet
 	r.symbol = &symbol
 	return r
 }
-
 // page number. (default 1)
 func (r ApiPublicV1TradesGetRequest) Page(page int32) ApiPublicV1TradesGetRequest {
 	r.page = &page
 	return r
 }
-
 // Max count per request. (default 100)
 func (r ApiPublicV1TradesGetRequest) Count(count int32) ApiPublicV1TradesGetRequest {
 	r.count = &count

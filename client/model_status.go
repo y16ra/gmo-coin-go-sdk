@@ -20,7 +20,7 @@ import (
 type Status struct {
 	// 0 Nomal end
 	Status int32 `json:"status"`
-	Data NullableInterface{} `json:"data"`
+	Data interface{} `json:"data"`
 	Responsetime time.Time `json:"responsetime"`
 }
 
@@ -28,7 +28,7 @@ type Status struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStatus(status int32, data NullableInterface{}, responsetime time.Time) *Status {
+func NewStatus(status int32, data interface{}, responsetime time.Time) *Status {
 	this := Status{}
 	this.Status = status
 	this.Data = data
@@ -57,7 +57,7 @@ func (o *Status) GetStatus() int32 {
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
 func (o *Status) GetStatusOk() (*int32, bool) {
-	if o == nil {
+	if o == nil  {
 		return nil, false
 	}
 	return &o.Status, true
@@ -71,27 +71,27 @@ func (o *Status) SetStatus(v int32) {
 // GetData returns the Data field value
 // If the value is explicit nil, the zero value for interface{} will be returned
 func (o *Status) GetData() interface{} {
-	if o == nil || o.Data.Get() == nil {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
 
-	return *o.Data.Get()
+	return o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Status) GetDataOk() (*interface{}, bool) {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return o.Data.Get(), o.Data.IsSet()
+	return &o.Data, true
 }
 
 // SetData sets field value
 func (o *Status) SetData(v interface{}) {
-	o.Data.Set(&v)
+	o.Data = v
 }
 
 // GetResponsetime returns the Responsetime field value
@@ -107,7 +107,7 @@ func (o *Status) GetResponsetime() time.Time {
 // GetResponsetimeOk returns a tuple with the Responsetime field value
 // and a boolean to check if the value has been set.
 func (o *Status) GetResponsetimeOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil  {
 		return nil, false
 	}
 	return &o.Responsetime, true
@@ -123,8 +123,8 @@ func (o Status) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["status"] = o.Status
 	}
-	if true {
-		toSerialize["data"] = o.Data.Get()
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
 	}
 	if true {
 		toSerialize["responsetime"] = o.Responsetime

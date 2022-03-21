@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | **int32** | 0 Nomal end | 
-**Data** | **NullableInterface{}** |  | 
+**Data** | **interface{}** |  | 
 **Responsetime** | **time.Time** |  | 
 
 ## Methods
 
 ### NewStatus
 
-`func NewStatus(status int32, data NullableInterface{}, responsetime time.Time, ) *Status`
+`func NewStatus(status int32, data interface{}, responsetime time.Time, ) *Status`
 
 NewStatus instantiates a new Status object
 This constructor will assign default values to properties that have it defined,

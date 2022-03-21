@@ -19,6 +19,10 @@ import (
 	"net/url"
 )
 
+// Linger please
+var (
+	_ context.Context
+)
 
 // PrivateApiService PrivateApi service
 type PrivateApiService service
@@ -27,6 +31,7 @@ type ApiPrivateV1AccountAssetsGetRequest struct {
 	ctx context.Context
 	ApiService *PrivateApiService
 }
+
 
 func (r ApiPrivateV1AccountAssetsGetRequest) Execute() (*Assets, *http.Response, error) {
 	return r.ApiService.PrivateV1AccountAssetsGetExecute(r)
@@ -167,6 +172,7 @@ type ApiPrivateV1AccountMarginGetRequest struct {
 	ApiService *PrivateApiService
 }
 
+
 func (r ApiPrivateV1AccountMarginGetRequest) Execute() (*AccountMargin, *http.Response, error) {
 	return r.ApiService.PrivateV1AccountMarginGetExecute(r)
 }
@@ -305,6 +311,7 @@ type ApiPrivateV1AccountTradingVolumeGetRequest struct {
 	ctx context.Context
 	ApiService *PrivateApiService
 }
+
 
 func (r ApiPrivateV1AccountTradingVolumeGetRequest) Execute() (*TradingVolume, *http.Response, error) {
 	return r.ApiService.PrivateV1AccountTradingVolumeGetExecute(r)
