@@ -227,6 +227,10 @@ components:
         responsetime:
           type: string
           format: date-time
+      required:
+        - status
+        - data
+        - responsetime
     Tickers:
       type: object
       properties:
@@ -399,6 +403,10 @@ components:
         responsetime:
           type: string
           format: date-time
+      required:
+        - status
+        - data
+        - responsetime
 
 
   securitySchemes:
