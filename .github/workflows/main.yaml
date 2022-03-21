@@ -32,3 +32,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: swagger-ui
+      - name: Generate client library for GMO Coin
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: go
+          openapi-file: api/openapi-spec/openapi.yaml
+      - name: Commit generated files
+        run: |
+          git config --local user.email "y16ra@users.noreply.github.com"
+          git config --local user.name "y16ra"
+          git commit -m "Update client" -a
+          git pull
+          git push
