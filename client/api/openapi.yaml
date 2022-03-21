@@ -241,6 +241,8 @@ components:
               - MAINTENANCE
               - PREOPEN
               type: string
+          required:
+          - status
         responsetime:
           format: date-time
           type: string
@@ -399,8 +401,15 @@ components:
                     $ref: '#/components/schemas/Symbols'
                   todayLimitOpenSize:
                     type: string
+                required:
+                - symbol
+                - todayLimitOpenSize
                 type: object
               type: array
+          required:
+          - jpyVolume
+          - limit
+          - tierLevel
         responsetime:
           format: date-time
           type: string
