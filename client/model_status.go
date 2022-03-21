@@ -19,17 +19,20 @@ import (
 // Status struct for Status
 type Status struct {
 	// 0 Nomal end
-	Status *int32 `json:"status,omitempty"`
-	Data NullableInterface{} `json:"data,omitempty"`
-	Responsetime *time.Time `json:"responsetime,omitempty"`
+	Status int32 `json:"status"`
+	Data NullableInterface{} `json:"data"`
+	Responsetime time.Time `json:"responsetime"`
 }
 
 // NewStatus instantiates a new Status object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStatus() *Status {
+func NewStatus(status int32, data NullableInterface{}, responsetime time.Time) *Status {
 	this := Status{}
+	this.Status = status
+	this.Data = data
+	this.Responsetime = responsetime
 	return &this
 }
 
@@ -41,48 +44,42 @@ func NewStatusWithDefaults() *Status {
 	return &this
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
+// GetStatus returns the Status field value
 func (o *Status) GetStatus() int32 {
-	if o == nil || o.Status == nil {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Status
+
+	return o.Status
 }
 
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
 func (o *Status) GetStatusOk() (*int32, bool) {
-	if o == nil || o.Status == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Status, true
+	return &o.Status, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *Status) HasStatus() bool {
-	if o != nil && o.Status != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
+// SetStatus sets field value
 func (o *Status) SetStatus(v int32) {
-	o.Status = &v
+	o.Status = v
 }
 
-// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetData returns the Data field value
+// If the value is explicit nil, the zero value for interface{} will be returned
 func (o *Status) GetData() interface{} {
 	if o == nil || o.Data.Get() == nil {
 		var ret interface{}
 		return ret
 	}
+
 	return *o.Data.Get()
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Status) GetDataOk() (*interface{}, bool) {
@@ -92,70 +89,44 @@ func (o *Status) GetDataOk() (*interface{}, bool) {
 	return o.Data.Get(), o.Data.IsSet()
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *Status) HasData() bool {
-	if o != nil && o.Data.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given NullableInterface{} and assigns it to the Data field.
+// SetData sets field value
 func (o *Status) SetData(v interface{}) {
 	o.Data.Set(&v)
 }
-// SetDataNil sets the value for Data to be an explicit nil
-func (o *Status) SetDataNil() {
-	o.Data.Set(nil)
-}
 
-// UnsetData ensures that no value is present for Data, not even an explicit nil
-func (o *Status) UnsetData() {
-	o.Data.Unset()
-}
-
-// GetResponsetime returns the Responsetime field value if set, zero value otherwise.
+// GetResponsetime returns the Responsetime field value
 func (o *Status) GetResponsetime() time.Time {
-	if o == nil || o.Responsetime == nil {
+	if o == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.Responsetime
+
+	return o.Responsetime
 }
 
-// GetResponsetimeOk returns a tuple with the Responsetime field value if set, nil otherwise
+// GetResponsetimeOk returns a tuple with the Responsetime field value
 // and a boolean to check if the value has been set.
 func (o *Status) GetResponsetimeOk() (*time.Time, bool) {
-	if o == nil || o.Responsetime == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Responsetime, true
+	return &o.Responsetime, true
 }
 
-// HasResponsetime returns a boolean if a field has been set.
-func (o *Status) HasResponsetime() bool {
-	if o != nil && o.Responsetime != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResponsetime gets a reference to the given time.Time and assigns it to the Responsetime field.
+// SetResponsetime sets field value
 func (o *Status) SetResponsetime(v time.Time) {
-	o.Responsetime = &v
+	o.Responsetime = v
 }
 
 func (o Status) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Status != nil {
+	if true {
 		toSerialize["status"] = o.Status
 	}
-	if o.Data.IsSet() {
+	if true {
 		toSerialize["data"] = o.Data.Get()
 	}
-	if o.Responsetime != nil {
+	if true {
 		toSerialize["responsetime"] = o.Responsetime
 	}
 	return json.Marshal(toSerialize)

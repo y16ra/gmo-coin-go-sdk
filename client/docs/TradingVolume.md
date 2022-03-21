@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | Pointer to **int32** | 0 Nomal end | [optional] 
-**Data** | Pointer to **NullableInterface{}** |  | [optional] 
-**Responsetime** | Pointer to **time.Time** |  | [optional] 
+**Status** | **int32** | 0 Nomal end | 
+**Data** | **NullableInterface{}** |  | 
+**Responsetime** | **time.Time** |  | 
 
 ## Methods
 
 ### NewTradingVolume
 
-`func NewTradingVolume() *TradingVolume`
+`func NewTradingVolume(status int32, data NullableInterface{}, responsetime time.Time, ) *TradingVolume`
 
 NewTradingVolume instantiates a new TradingVolume object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
-### HasStatus
-
-`func (o *TradingVolume) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
 
 ### GetData
 
@@ -71,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
-### HasData
-
-`func (o *TradingVolume) HasData() bool`
-
-HasData returns a boolean if a field has been set.
 
 ### SetDataNil
 
@@ -106,11 +96,6 @@ and a boolean to check if the value has been set.
 
 SetResponsetime sets Responsetime field to given value.
 
-### HasResponsetime
-
-`func (o *TradingVolume) HasResponsetime() bool`
-
-HasResponsetime returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -246,6 +246,10 @@ components:
         responsetime:
           format: date-time
           type: string
+      required:
+      - data
+      - responsetime
+      - status
       type: object
     Tickers:
       example:
@@ -413,6 +417,10 @@ components:
         responsetime:
           format: date-time
           type: string
+      required:
+      - data
+      - responsetime
+      - status
       type: object
     inline_object:
       properties:
