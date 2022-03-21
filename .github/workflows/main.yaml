@@ -37,7 +37,7 @@ jobs:
         with:
           generator: go
           openapi-file: api/openapi-spec/openapi.yaml
-          command-args: -o client --additional-properties=packageName=client
+          command-args: -o client --additional-properties=packageName=client --git-repo-id="gmo-coin-go-sdk" --git-user-id="y16ra"
       - name: Commit generated files
         run: |
           git config --local user.email "y16ra@users.noreply.github.com"
