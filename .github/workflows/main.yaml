@@ -37,10 +37,12 @@ jobs:
         with:
           generator: go
           openapi-file: api/openapi-spec/openapi.yaml
+          command-args: -o client --additional-properties=packageName=client
       - name: Commit generated files
         run: |
           git config --local user.email "y16ra@users.noreply.github.com"
           git config --local user.name "y16ra"
+          git add client
           git commit -m "Update client" -a
           git pull
           git push
