@@ -1,4 +1,4 @@
-module github.com/y16ra/gmo-coin-go-sdk
+module github.com/y16ra/gmo-coin-go-sdk/client
 
 go 1.13
 
