@@ -12,6 +12,7 @@ docs/Assets.md
 docs/AssetsData.md
 docs/InlineObject.md
 docs/InlineResponse200.md
+docs/Order.md
 docs/Orderbooks.md
 docs/OrderbooksData.md
 docs/OrderbooksDataAsks.md
@@ -35,6 +36,7 @@ model_assets.go
 model_assets_data.go
 model_inline_object.go
 model_inline_response_200.go
+model_order.go
 model_orderbooks.go
 model_orderbooks_data.go
 model_orderbooks_data_asks.go
